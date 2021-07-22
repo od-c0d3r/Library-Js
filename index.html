@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Js</title>
-</head>
-<body>
-    <h1>Hello</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Library Js</title>
+    </head>
+    <body class='body'>
+        <h1>Hello</h1>
+                
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+                <label for="author"><b>Author</b></label>
+                <input type="text" placeholder="Author name" id='author' name="author" required> <br>
+                
+                <label for="title"><b>Title</b></label>
+                <input type="text" placeholder="Title" id='title' name="title" required> <br>
 
-    <script src="assets/scripts/main.js"></script>
-</body>
+                <label for="pages"><b>Pages</b></label>
+                <input type="text" placeholder="Pages" id='pages' name="pages" required> <br>
+            
+                <label for="readingt"><b>Done Reading?</b></label> <br>
+                <input type="radio" id="readingt" name="reading" value="true">
+                <label for="readingf">Yes</label><br>
+                <input type="radio" id="readingf" name="reading" value="false">
+                <label for="age1">No</label><br>
+            
+                <button type="button" id="formBtn" >Insert Book</button>
+            </form>
+        </div>
+
+        <h1 class="pageHeader"></h1>
+        <ul class="bookList"></ul>
+
+        <script src="assets/scripts/main.js"></script>
+    </body>
 </html>

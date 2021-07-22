@@ -12,20 +12,6 @@ function Book(author, title, pages, doneReading) {
   this.doneReading = doneReading;
 }
 
-function toggleRead(index, lib) {
-  if (lib[index].doneReading === true) {
-    lib[index].doneReading = false;
-  } else {
-    lib[index].doneReading = true;
-  }
-  displayLibrary(lib);
-}
-
-function removeBook(index, lib) {
-  myLibrary.splice(index, 1);
-  displayLibrary(lib);
-}
-
 function displayLibrary(lib) {
   newBookBtn.style.display = 'block';
   const h1 = document.querySelector('.pageHeader');
@@ -34,6 +20,20 @@ function displayLibrary(lib) {
   bookList.innerHTML = '';
 
   Object.keys(lib).forEach((bookIndex) => {
+      
+    function toggleRead(index, lib) {
+      if (lib[index].doneReading === true) {
+        lib[index].doneReading = false;
+      } else {
+        lib[index].doneReading = true;
+      }
+      displayLibrary(lib);
+    }
+
+    function removeBook(index, lib) {
+      myLibrary.splice(index, 1);
+      displayLibrary(lib);
+    }
     const bookItem = document.createElement('li');
     const removeBtn = document.createElement('button');
     const readToggle = document.createElement('button');

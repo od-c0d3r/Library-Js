@@ -34,8 +34,3 @@ jobs:
           [ -f .stylelintrc.json ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/javascript/.stylelintrc.json
       - name: Stylelint Report
         run: npx stylelint "**/*.{css,scss}"
-Viewport
-Window
-×
-×
-×{"mode":"full","isActive":false}

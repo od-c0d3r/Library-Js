@@ -1,10 +1,18 @@
 // All of your book objects are going to be stored in a simple array
 let myLibrary = [];
-body = document.querySelector('.body')
+body = document.body
+let newBookBtn = document.createElement('input');
+newBookBtn.value = 'Add new book';
+newBookBtn.onclick = addBookToLibrary;
+newBookBtn.type = 'button'
+body.appendChild(newBookBtn);
 
 // Book object constructor
-function Book(name) {
-    this.name = name
+function Book(author, title, pages, doneReading) {
+    this.author = author;
+    this.title = title;
+    this.pages = pages;
+    this.doneReading = doneReading
 }
 
 // gonna use it after asking user to enter book name 

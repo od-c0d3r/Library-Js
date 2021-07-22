@@ -46,10 +46,14 @@ function displayLibrary(lib) {
     for (let bookIndex in lib) {
         let bookItem = document.createElement('li');
         let removeBtn = document.createElement('button');
+        let readToggle = document.createElement('button');
         removeBtn.innerHTML = 'Remove Book';
-        removeBtn.onclick = () => {removeFun(bookIndex, lib)};
-        bookItem.innerHTML = lib[bookIndex].title;
+        removeBtn.onclick = () => {removeBook(bookIndex, lib)};
+        readToggle.innerHTML = 'Toggle Read';
+        readToggle.onclick = () => {toggleRead(bookIndex, lib)};
+        bookItem.innerHTML = 'Title : ' + lib[bookIndex].title + '<br> Read : ' + lib[bookIndex].doneReading + '<br>';
         bookItem.appendChild(removeBtn);
+        bookItem.appendChild(readToggle);
         bookList.appendChild(bookItem);
     }
 
@@ -64,7 +68,16 @@ function displayForm() {
     formBtn.onclick = addBookToLibrary;
 }
 
-function removeFun(index, lib) {
+function removeBook(index, lib) {
     myLibrary.splice(index,1);
+    displayLibrary(lib);
+}
+
+function toggleRead(index,lib) {
+    if (lib[index].doneReading === true) {
+        lib[index].doneReading = false
+    } else {
+        lib[index].doneReading = true
+    }
     displayLibrary(lib);
 }

@@ -71,13 +71,6 @@ function displayForm() {
 }
 
 newBookBtn.onclick = displayForm;
-// All of your book objects are going to be stored in a simple array
 
 body.insertBefore(newBookBtn, body.children[1]);
 myForm.style.display = 'none';
-
-// Book object constructor
-
-// gonna use it after asking user to enter book name
-
-// function that loops through the array and displays each book on the page.

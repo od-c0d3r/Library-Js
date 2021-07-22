@@ -18,9 +18,7 @@ function displayLibrary(lib) {
   h1.innerHTML = 'Your Library :';
   const bookList = document.querySelector('ul');
   bookList.innerHTML = '';
-
   Object.keys(lib).forEach((bookIndex) => {
-      
     function toggleRead(index, lib) {
       if (lib[index].doneReading === true) {
         lib[index].doneReading = false;

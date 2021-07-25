@@ -5,6 +5,10 @@ const myForm = document.getElementById('myForm');
 newBookBtn.value = 'Add new book';
 newBookBtn.type = 'button';
 
+const book = (author, title, pages, doneReading) => {
+  return {author, title, pages, doneReading};
+};
+
 function Book(author, title, pages, doneReading) {
   this.author = author;
   this.title = title;
@@ -58,7 +62,7 @@ function addBookToLibrary() {
   } else {
     reading = document.getElementById('readingf').value;
   }
-  const newBook = new Book(author, title, pages, reading);
+  const newBook = book(author, title, pages, reading);
   myLibrary.push(newBook);
   displayLibrary(myLibrary);
 }
